@@ -1,0 +1,56 @@
+{% extends "templates/layouts/container.html" %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+{% endblock %}
+
+{% block content %}
+<div class="c-signin" id="wrapper">
+    <div class="c-signin__container">
+        <div class="c-signin__form c-signin__form--sign-up">
+            <form name="" class="">
+                <h1 class="c-signin__heading">Create Account</h1>
+                <div class="c-signin__social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="c-signin__text">or use your email for registration</p>
+                <input type="text" placeholder="Name" class="c-signin__input-control" />
+                <input type="email" placeholder="Email" class="c-signin__input-control" />
+                <input type="password" placeholder="Password" class="c-signin__input-control" />
+                <button class="c-signin__button" type="button">Sign Up</button>
+            </form>
+        </div>
+        <div class="c-signin__form c-signin__form--sign-in">
+            <form name="" class="">
+                <h1 class="c-signin__heading">Sign in</h1>
+                <div class="c-signin__social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="c-signin__text">or use your account</p>
+                <input type="email" placeholder="Email" class="c-signin__input-control" />
+                <input type="password" placeholder="Password" class="c-signin__input-control" />
+                <a href="#" class="c-signin__cta">Forgot your password?</a>
+                <button class="c-signin__button" type="button">Sign In</button>
+            </form>
+        </div>
+        <div class="c-signin-overlay">
+            <div class="c-signin-overlay__container">
+                <div class="c-signin-overlay__panel c-signin-overlay__panel--left">
+                    <h2 class="c-signin-overlay__heading">Welcome Back!</h2>
+                    <p class="c-signin-overlay__text">To keep connected with us please login with your personal info</p>
+                    <button class="c-signin-overlay__button" id="signIn">Sign In</button>
+                </div>
+                <div class="c-signin-overlay__panel c-signin-overlay__panel--right">
+                    <h2 class="c-signin-overlay__heading">Hello, Friend!</h2>
+                    <p class="c-signin-overlay__text">Enter your personal details and start journey with us</p>
+                    <button class="c-signin-overlay__button" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

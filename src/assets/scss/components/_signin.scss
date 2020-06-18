@@ -1,0 +1,263 @@
+.c-signin {
+    background: linear-gradient(to right, var(--base-color-yellow80), var(--base-color-yellow60));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+
+    &__container {
+        background-color: var(--base-color-white100);
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,.15), 0 0 9px rgba(0,0,0,.1);
+        position: relative;
+        overflow: hidden;
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+    }
+
+    &__form {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+
+        form {
+            background-color: var(--base-color-white100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        &--sign-in {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        &--sign-up {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+        margin: 0;
+        color: inherit;
+        font-size: rem(32px);
+        font-family: $font-fm-black;
+        line-height: 1;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        color: inherit;
+        font-family: $font-fm-light;
+        margin: 0;
+    }
+
+    &__social {
+        margin: 20px 0;
+
+        a {
+            border: 1px solid var(--base-color-black40);
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+            transition: all 0.3s ease-in;
+
+            i {
+                color: var(--base-color-black40);
+                transition: all 0.3s ease-in;
+            }
+
+            &:hover {
+                border: 1px solid var(--base-color-red100);
+
+                i {
+                    color: var(--base-color-red100);
+                }
+            }
+        }
+    }
+
+    &__input-control {
+        background-color: #eee;
+        border: none;
+        outline: none;
+        padding: 12px 15px;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    &__button {
+        display: inline-block;
+        border-radius: 20px;
+        border: 1px solid var(--base-color-red100);
+        background-color: var(--base-color-red100);
+        color: var(--base-color-white100);
+        font-size: 14px;
+        font-weight: bold;
+        padding: 12px 46px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+        cursor: pointer;
+        outline: none;
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &__cta {
+        display: inline-block;
+        font-size: 14px;
+        font-family: $font-fm-light;
+        margin: 12px 0;
+    }
+
+    &.active {
+        .c-signin__form--sign-in {
+            transform: translateX(100%);
+        }
+
+        .c-signin__form--sign-up {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        .c-signin-overlay {
+            transform: translateX(-100%);
+        }
+
+        .c-signin-overlay__container {
+            transform: translateX(50%);
+        }
+
+        .c-signin-overlay__panel--left{
+            transform: translateX(0);
+        }
+
+        .c-signin-overlay__panel--right {
+            transform: translateX(20%);
+        }
+    }
+}
+
+.c-signin-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+
+    &__container {
+        background: var(--base-color-red100);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+        color: var(--base-color-white100);
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    &__heading {
+        text-align: center;
+        color: inherit;
+        font-size: rem(42px);
+        font-family: $font-fm-black;
+        line-height: 1;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        color: inherit;
+        font-family: $font-fm-light;
+        padding: 1rem 0;
+    }
+
+    &__panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+
+        &--right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        &--left {
+            transform: translateX(-20%);
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        border-radius: 20px;
+        background-color: transparent;
+        border: var(--base-color-white100) 1px solid;
+        color: var(--base-color-white100);
+        font-size: 14px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+        outline: none;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+@keyframes show {
+
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
