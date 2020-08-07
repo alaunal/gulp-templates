@@ -24,6 +24,7 @@ const pump = require('pump');
 const browserSync = require('browser-sync').create();
 const runSequence = require('gulp4-run-sequence');
 const plumber = require('gulp-plumber');
+const path = require("path");
 
 // -- config
 const package = require('./package.json');
@@ -160,7 +161,17 @@ gulp.task('compile-scripts', done => {
         .pipe(plumber())
         .pipe(named())
         .pipe(webpackStream({
-            mode: 'production'
+            mode: isProd ? 'production' : 'development',
+            output: {
+                chunkFilename: 'module.[hash].js',
+                publicPath: "static/js/",
+                path: path.resolve(__dirname, "static/js"),
+            },
+            optimization: {
+                splitChunks: {
+                    chunks: 'all',
+                },
+            },
         }, webpack))
         .pipe(isProd ? noop() : sourcemaps.init())
         .pipe(babel())
@@ -218,7 +229,6 @@ gulp.task('gulp:compile', function(callback) {
         callback
     );
 });
-
 
 // -- watch task runner
 
