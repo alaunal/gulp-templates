@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
-    "build": "NODE_ENV=production gulp",
+    "build": "gulp --production",
     "serve": "gulp gulp:serve",
     "watch": "gulp gulp:watch"
   },
@@ -59,9 +59,5 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"
-  },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "jquery": "^3.5.1"
   }
 }

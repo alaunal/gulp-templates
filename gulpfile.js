@@ -57,9 +57,6 @@ const named = require('vinyl-named');
 // -- FUNCTION OF HELPERS
 // ---------------------------------------------------
 
-// -- Environment configuration.
-
-const isProd = process.env.NODE_ENV === 'production';
 
 // -- fetch command line arguments
 
@@ -79,6 +76,10 @@ const arg = (argList => {
     }
     return arg;
 })(process.argv);
+
+// -- Environment configuration.
+
+const isProd = arg.production === true;
 
 
 // ---------------------------------------------------

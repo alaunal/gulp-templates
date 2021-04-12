@@ -6,7 +6,7 @@ body {
   font-family: $font-fm-base;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   letter-spacing: normal;

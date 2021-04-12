@@ -12,8 +12,8 @@ const DATA = {
     "base": {
         "static": "static/",
         "revid": makeId(8),
-        "title": "GULP TEMPLATEING | gojek site",
-        "metaDescript": ""
+        "title": "GULP TEMPLATES | akcode",
+        "metaDesc": ""
     }
 };
 

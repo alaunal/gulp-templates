@@ -1,7 +1,7 @@
 
 # GULP TEMPLATES
 
-**GULP TEMPLATES** is a tool that we designed to make it easier for developers (especially Front-end Developers) to create and create user interfaces as outlined in the visual web form of the design that has been determined.
+**GULP TEMPLATES** is a tool that we designed to make it easier for developers (especially Front-end Developers) to create and create user interfaces as outlined in the visual web form of the design that has been determined. [**Page Docs**](https://gulp-templates.netlify.app/)
 
 
 ## Features
@@ -36,7 +36,7 @@ As a prerequisite it's assumed you have `npm` or `yarn` installed.
 
 1.  **Clone Repo**
 
-	Make sure you have a **GULP STARTER-KIT** clone repository.
+	Make sure you have a **GULP TEMPLATE** clone repository.
 	```
 	https://github.com/alaunal/gulp-templates.git
 	```
